@@ -52,6 +52,13 @@ train:
 predict:
 	python $(PROJECT_NAME)/models/predict_model.py "$(MODEL_PATH)" "$(DATA_PATH)"
 
+
+## Visualize
+visualize:
+
+	python $(PROJECT_NAME)/visualizations/visualize.py --model_checkpoint="$(MODEL_PATH)" --processed_dir="$(PROCESSED_DIR)" --figure_dir="$(FIGURE_DIR)" --figure_name="$(FIGURE_NAME)"
+
+
 #################################################################################
 # Documentation RULES                                                           #
 #################################################################################
