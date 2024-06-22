@@ -48,6 +48,13 @@ data:
 train:
 	python $(PROJECT_NAME)/models/train_model.py
 
+## Predict 
+predict:
+	@echo "Usage: make predict MODEL_PATH=<model_path> DATA_PATH=<data_path>"
+	@echo "Example: make predict MODEL_PATH=models/my_trained_model.pt DATA_PATH=data/example_images.npy"
+	@if [ -z "$(MODEL_PATH)" ]; then echo "Error: MODEL_PATH is not set"; exit 1; fi
+	@if [ -z "$(DATA_PATH)" ]; then echo "Error: DATA_PATH is not set"; exit 1; fi
+	python $(PROJECT_NAME)/models/predict_model.py $(MODEL_PATH) $(DATA_PATH)
 
 #################################################################################
 # Documentation RULES                                                           #
