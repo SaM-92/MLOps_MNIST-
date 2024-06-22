@@ -7,6 +7,8 @@ import pickle
 import sys
 import os
 
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))#
+
 from models.model import Network  # Import your model class
 
 def load_model(model_path):
